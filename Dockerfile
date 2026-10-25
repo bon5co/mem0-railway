@@ -15,6 +15,7 @@ RUN curl -fsSL "https://codeload.github.com/mem0ai/mem0/tar.gz/refs/tags/v${MEM0
  && sed -i "s/^mem0ai.*/mem0ai==${MEM0_VERSION}/" requirements.txt \
  && pip install --no-cache-dir -r requirements.txt
 
+COPY serve.py /app/serve.py
 COPY railway-entrypoint.sh /usr/local/bin/railway-entrypoint.sh
 RUN chmod +x /usr/local/bin/railway-entrypoint.sh
 

@@ -44,4 +44,4 @@ print("[railway] postgres ready", flush=True)
 PY
 
 alembic upgrade head
-exec uvicorn main:app --host :: --port "${PORT:-8080}"
+exec python /app/serve.py
